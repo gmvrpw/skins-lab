@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
 import { Link } from "@solidjs/router";
-import * as S from "./style";
+import * as S from "./styles";
 
 const Index: Component = () => {
   return (
