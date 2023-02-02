@@ -9,6 +9,7 @@ export const GlobalStyles = () => {
       border: 0;
       height: 100%;
       width: 100%;
+      font-family: Inter, sans-serif;
     }
     * {
       box-sizing: border-box;
