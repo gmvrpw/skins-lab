@@ -18,17 +18,46 @@ export const GlobalStyles = () => {
 };
 
 const colors = {
+  brand: {
+    lightest: "hsl(270, 100%, 95%, 1)",
+    base: "hsl(270, 100%, 50%, 1)",
+  },
+  primary: {
+    darker: "hsl(0, 0%, 0%, 1)",
+    base: "hsl(0, 0%, 20%, 1)",
+    lighter: "hsl(0, 0%, 35%, 1)",
+    lightest: "hsl(0, 0%, 50%, 1)",
+  },
   secondary: {
-    lightest: "#ffffff",
-    lighter: "#f2f2f2",
-    base: "#e6e6e6",
-    darker: "#d9d9d9",
-    darkest: "#cccccc",
+    base: "hsl(0, 0%, 100%, 1)",
+    darker: "hsl(0, 0%, 95%,  1)",
+    darkest: "hsl(0, 0%, 90%, 1)",
   },
 };
 
+const outline = `0 0 0 3px ${colors.brand.base} inset`;
+
 const light = {
-  background: colors.secondary.base,
+  background: colors.secondary.darkest,
+  icon: {
+    fill: colors.primary.base,
+  },
+  button: {
+    color: colors.primary.base,
+    background: colors.secondary.base,
+    text: {
+      padding: "0 8px",
+      fontFamily: "Inter, serif",
+      fontSize: "12px",
+    },
+    hover: {
+      background: colors.secondary.darker,
+    },
+    focusVisible: {
+      background: colors.brand.lightest,
+      boxShadow: outline,
+    },
+  },
 };
 
 export const theme = {
@@ -38,5 +67,24 @@ export const theme = {
 declare module "solid-styled-components" {
   export interface DefaultTheme {
     background: string;
+    icon: {
+      fill: string;
+    };
+    button: {
+      color: string;
+      background: string;
+      text: {
+        padding: string;
+        fontFamily: string;
+        fontSize: string;
+      };
+      hover: {
+        background: string;
+      };
+      focusVisible: {
+        background: string;
+        boxShadow: string;
+      };
+    };
   }
 }
